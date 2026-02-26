@@ -59,7 +59,7 @@ currency-converter-nx/
   assets/build/
     currency-converter.js         -- Compiled React app
     currency-converter.css        -- Styles
-  react-app/                      -- Πηγαίος κώδικας React (dev)
+  react-app/                      -- React src (dev)
 ```
 
 ## Build React app
