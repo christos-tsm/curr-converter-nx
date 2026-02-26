@@ -1,0 +1,312 @@
+/* ============================================
+   Currency Converter NXCode — Widget Styles
+   Scoped under .ccnx-converter to avoid conflicts
+   ============================================ */
+
+.ccnx-converter {
+  --ccnx-primary: #2563eb;
+  --ccnx-primary-dark: #1d4ed8;
+  --ccnx-primary-light: #dbeafe;
+  --ccnx-bg: #ffffff;
+  --ccnx-surface: #f8fafc;
+  --ccnx-border: #e2e8f0;
+  --ccnx-text: #1e293b;
+  --ccnx-text-secondary: #64748b;
+  --ccnx-text-muted: #94a3b8;
+  --ccnx-success: #059669;
+  --ccnx-error: #dc2626;
+  --ccnx-radius: 12px;
+  --ccnx-radius-sm: 8px;
+  --ccnx-shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.04);
+  --ccnx-shadow-lg: 0 4px 6px rgba(0, 0, 0, 0.07), 0 10px 24px rgba(0, 0, 0, 0.06);
+  --ccnx-transition: 0.2s ease;
+
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  max-width: 400px;
+  width: 100%;
+  border-radius: var(--ccnx-radius);
+  background: var(--ccnx-bg);
+  box-shadow: var(--ccnx-shadow);
+  overflow: hidden;
+  line-height: 1.5;
+  color: var(--ccnx-text);
+  box-sizing: border-box;
+}
+
+.ccnx-converter *,
+.ccnx-converter *::before,
+.ccnx-converter *::after {
+  box-sizing: border-box;
+}
+
+/* Header */
+.ccnx-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 20px;
+  background: linear-gradient(135deg, var(--ccnx-primary), var(--ccnx-primary-dark));
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.ccnx-header-icon {
+  flex-shrink: 0;
+  opacity: 0.9;
+}
+
+/* Body */
+.ccnx-body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Fields */
+.ccnx-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.ccnx-label {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--ccnx-text-secondary);
+}
+
+.ccnx-input,
+.ccnx-select {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1.5px solid var(--ccnx-border);
+  border-radius: var(--ccnx-radius-sm);
+  font-size: 15px;
+  color: var(--ccnx-text);
+  background: var(--ccnx-surface);
+  transition: border-color var(--ccnx-transition), box-shadow var(--ccnx-transition);
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.ccnx-input:focus,
+.ccnx-select:focus {
+  border-color: var(--ccnx-primary);
+  box-shadow: 0 0 0 3px var(--ccnx-primary-light);
+}
+
+.ccnx-input::placeholder {
+  color: var(--ccnx-text-muted);
+}
+
+.ccnx-select {
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 36px;
+}
+
+/* Currencies row */
+.ccnx-currencies {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.ccnx-currencies .ccnx-field {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Swap button */
+.ccnx-swap-btn {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border: 1.5px solid var(--ccnx-border);
+  border-radius: 50%;
+  background: var(--ccnx-bg);
+  color: var(--ccnx-primary);
+  cursor: pointer;
+  transition: all var(--ccnx-transition);
+  margin-bottom: 1px;
+  padding: 0;
+}
+
+.ccnx-swap-btn:hover {
+  background: var(--ccnx-primary-light);
+  border-color: var(--ccnx-primary);
+  transform: rotate(180deg);
+}
+
+.ccnx-swap-btn:active {
+  transform: rotate(180deg) scale(0.95);
+}
+
+/* Result */
+.ccnx-result {
+  padding: 16px;
+  border-radius: var(--ccnx-radius-sm);
+  text-align: center;
+}
+
+.ccnx-result--loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: var(--ccnx-surface);
+  color: var(--ccnx-text-secondary);
+  font-size: 14px;
+}
+
+.ccnx-result--empty {
+  background: var(--ccnx-surface);
+  color: var(--ccnx-text-muted);
+  font-size: 14px;
+}
+
+.ccnx-result--error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: #fef2f2;
+  color: var(--ccnx-error);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.ccnx-result--success {
+  background: linear-gradient(135deg, #f0fdf4, #ecfdf5);
+  border: 1px solid #bbf7d0;
+}
+
+.ccnx-result-from {
+  font-size: 13px;
+  color: var(--ccnx-text-secondary);
+  margin-bottom: 4px;
+}
+
+.ccnx-result-equals {
+  font-size: 11px;
+  color: var(--ccnx-text-muted);
+  margin-bottom: 4px;
+}
+
+.ccnx-result-to {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 8px;
+}
+
+.ccnx-result-value {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--ccnx-success);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.ccnx-result-currency {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--ccnx-text-secondary);
+}
+
+.ccnx-result-rate {
+  margin-top: 8px;
+  font-size: 12px;
+  color: var(--ccnx-text-muted);
+}
+
+/* Footer */
+.ccnx-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 8px;
+  border-top: 1px solid var(--ccnx-border);
+}
+
+.ccnx-updated {
+  font-size: 11px;
+  color: var(--ccnx-text-muted);
+}
+
+.ccnx-refresh-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--ccnx-text-muted);
+  cursor: pointer;
+  transition: all var(--ccnx-transition);
+  padding: 0;
+}
+
+.ccnx-refresh-btn:hover {
+  background: var(--ccnx-surface);
+  color: var(--ccnx-primary);
+}
+
+.ccnx-refresh-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Spinner */
+@keyframes ccnx-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.ccnx-spinner {
+  width: 18px;
+  height: 18px;
+  border: 2.5px solid var(--ccnx-border);
+  border-top-color: var(--ccnx-primary);
+  border-radius: 50%;
+  animation: ccnx-spin 0.7s linear infinite;
+}
+
+/* Responsive */
+@media (max-width: 420px) {
+  .ccnx-converter {
+    max-width: 100%;
+  }
+
+  .ccnx-currencies {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .ccnx-swap-btn {
+    align-self: center;
+    transform: rotate(90deg);
+  }
+
+  .ccnx-swap-btn:hover {
+    transform: rotate(270deg);
+  }
+
+  .ccnx-result-value {
+    font-size: 24px;
+  }
+}

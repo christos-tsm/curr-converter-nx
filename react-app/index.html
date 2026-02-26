@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Currency Converter NXCode - Dev</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background: #f1f5f9;
+      display: flex;
+      justify-content: center;
+      padding: 40px 16px;
+      margin: 0;
+    }
+  </style>
+  <script>
+    window.ccNxcodeData = {
+      restUrl: '/wp-json/cc-nxcode/v1/',
+      nonce: 'dev-nonce',
+      useMock: true,
+    };
+  </script>
+</head>
+<body>
+  <div class="cc-nxcode-root" data-default-from="USD" data-default-to="EUR"></div>
+  <script type="module" src="/src/main.tsx"></script>
+</body>
+</html>
